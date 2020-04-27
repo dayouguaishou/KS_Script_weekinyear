@@ -1,0 +1,23 @@
+//weekinyear(int year,int month,int day)
+
+int zhou = day2week(year, 1, 1);
+
+int i,daybefore=0,zhoushu1 = 0;
+int[12]a={31,28,31,30,31,30,31,31,30,31,30,31};
+if((year%4==0 && year%100!=0) || (year%400==0))
+{ a[1]=29;}
+
+for(i=0;i<month-1;i++)
+{	
+	daybefore +=a[i];
+}
+int out = daybefore+day+zhou;
+if(out%7 == 0 )
+{
+	zhoushu1 = Int(out/7.0);
+}
+else
+{
+	zhoushu1 = Int(out/7.0)+1;
+}
+return zhoushu1;
